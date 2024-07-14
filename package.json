@@ -2,6 +2,7 @@
     "name": "05-desafione",
     "version": "1.0.0",
     "main": "server.js",
+    "type": "module",
     "scripts": {
         "dev": "node --watch server.js",
         "start": "node server.js"
