@@ -1,15 +1,16 @@
 import { Router } from 'express'
 
 import {
-    getAllJoyasControllers,
+    getAllJoyasControllersById,
+    getAllJoyasControllersFiltered,
     getAllJoyasControllersFormat,
-    getAllJoyasControllersHATEOAS,
+    notFound,
 } from '../controllers/joyas.controlles.js'
 
 const router = Router()
 
-router.get('/joyas', getAllJoyasControllers)
+router.get('/', notFound)
 router.get('/joyas', getAllJoyasControllersFormat)
-router.get('/joyas_hateoas', getAllJoyasControllersHATEOAS)
-
+router.get('/joyas/filtros', getAllJoyasControllersFiltered)
+router.get('/joyas/:id', getAllJoyasControllersById)
 export default router

@@ -1,8 +1,8 @@
-import pg from "pg";
-import "dotenv/config";
+import pg from 'pg'
+import 'dotenv/config'
 
-const { Pool } = pg;
-const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
+const { Pool } = pg
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env
 
 const config = {
     host: DB_HOST,
@@ -11,13 +11,13 @@ const config = {
     password: DB_PASSWORD,
     database: DB_DATABASE,
     allowExitOnIdle: true,
-};
+}
 
-export const pool = new pg.Pool(config);
+export const pool = new pg.Pool(config)
 
 try {
-    await pool.query("SELECT NOW()");
-    console.log("Conectado a la base de datos desde config🔥🔥");
+    await pool.query('SELECT NOW()')
+    console.log('Conectado a la base de datos desde config🔥🔥')
 } catch (error) {
-    console.log("Error al conectar a la base de datos❌❌", error.message);
+    console.log('Error al conectar a la base de datos❌❌', error.message)
 }
